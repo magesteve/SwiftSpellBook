@@ -1,3 +1,5 @@
 # SwiftSpellBook
 
-A description of this package.
+Swift Package of useful tools for Swift Development
+
+https://github.com/magesteve/SwiftSpellBook
