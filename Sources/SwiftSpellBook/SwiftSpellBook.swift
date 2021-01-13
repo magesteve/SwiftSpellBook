@@ -6,7 +6,6 @@
 //  Copyright © 2021 Steve Sheets. All rights reserved.
 
 import Foundation
-import Cocoa
 
 /// Abstract extension for name space of typealias & static functions.
 public struct SwiftSpellBook {
