@@ -8,8 +8,12 @@ Refer to code documentation for explanation for specific calls.
 
 ## Closure Typealiases Magic
 
-Typealiases for Closures, for example DataClosure (Closure that has no results, but it passed a Data).
+Typealiases for Closures. 
+
+For example, DataClosure is a  typealias for a Closure that has no results, but it passed a Data.
 
 ## String Extensions Magic
 
-Extensions Function calls for String type, for example isNotEmpty (returns TRUE if string has contents).
+Extensions Function calls for String type.
+
+For example, isNotEmpty() is a function that returns TRUE if string has contents.
