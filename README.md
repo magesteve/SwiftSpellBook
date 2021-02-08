@@ -30,7 +30,7 @@ For example, DataClosure is a  typealias for a Closure that has no results, but 
 
 Extensions Function calls for String type.
 
-For example, isNotEmpty() is a function that returns TRUE if string has contents.
+For example, isNotEmpty() is a computed variable that returns TRUE if string has contents.
 
 ## License
 
