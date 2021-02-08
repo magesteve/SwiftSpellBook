@@ -5,7 +5,7 @@
 [![SPM](https://img.shields.io/badge/SPM-Compatible-blue)](https://swift.org/package-manager)
 [![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Swift Package of useful tools for Swift Development
+Swift Package of useful tools for Swift Development on any platform.
 
 ## Installation
 
