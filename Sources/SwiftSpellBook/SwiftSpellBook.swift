@@ -35,6 +35,9 @@ public extension SwiftSpellBook {
     /// Closure that has no results, but it passed a Int.
     typealias IntClosure = (Int) -> Void
     
+    /// Closure that has no results, but it passed a Bool.
+    typealias BoolClosure = (Bool) -> Void
+    
     // MARK: Result Closures
     
     /// Closure that has no parameters, but it returns a URL.
@@ -49,6 +52,8 @@ public extension SwiftSpellBook {
     /// Closure that has no parameters, but it returns a Int.
     typealias IntResultClosure = () -> Int
     
+    /// Closure that has no parameters, but it returns a Bool.
+    typealias BoolResultClosure = () -> Bool
 
 }
 
