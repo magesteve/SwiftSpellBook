@@ -11,7 +11,6 @@ Swift Package of useful tools for Swift Development
 
 ### Requirements
 
-- MacOS 10.15
 - Swift 5
 - Xcode 11
 
