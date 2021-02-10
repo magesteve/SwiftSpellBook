@@ -11,8 +11,8 @@ import Foundation
 public protocol SwiftDataable: Codable {
     
     /// Required function for SwiftDataable protocol to write serialized into Data
-    func writeData() -> Data
+    func writeData() -> Data?
 
-    /// Required function for SwiftDataable protocol to read serialized from passed Data
-    func readData(from: Data)
+    /// Required function for SwiftDataable protocol to read serialized from passed Data into result
+    func readData(from: Data) -> Any?
 }
