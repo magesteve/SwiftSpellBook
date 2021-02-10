@@ -57,14 +57,3 @@ public extension SwiftSpellBook {
 
 }
 
-// MARK: String Extensions
-
-public extension String {
-    
-    // MARK: Computed Property
-    
-    /// Reverse of isEmpty.  Variable returns true if content contains something.
-    var isNotEmpty: Bool { !isEmpty }
-    
-}
-
