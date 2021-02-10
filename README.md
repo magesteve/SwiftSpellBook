@@ -32,6 +32,12 @@ Extensions Function calls for String type.
 
 For example, isNotEmpty() is a computed variable that returns TRUE if string has contents.
 
+## Protocol Magic
+
+New Swift Protocols.
+
+For example, SwiftDataable for converting from/to Data objects.
+
 ## License
 
 SwiftSpellBook is available as open source under the terms of the [MIT](https://github.com/magesteve/SwiftSpellBook/blob/main/LICENSE) License.
