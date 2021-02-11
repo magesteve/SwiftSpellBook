@@ -32,11 +32,15 @@ Extensions Function calls for String type.
 
 For example, isNotEmpty() is a computed variable that returns TRUE if string has contents.
 
-## Protocol Magic
+## Codable Extension Magic
 
-New Swift Protocols.
+New Extensions to Codable Protocols.
 
-For example, SwiftDataable for converting from/to Data objects.
+For example, writeJSONData for converting Codable element into JSON data.
+
+## Demo App
+
+Sample code using this SpellBook can be found in the open-source Cocoa App [CocoaGrimoire](https://github.com/magesteve/CocoaGrimoire). Other SpellBooks by the author are also demonstrated there.
 
 ## License
 
