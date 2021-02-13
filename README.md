@@ -50,6 +50,10 @@ Protocol for UI element to signal that they should update themselves.
 
 For example, a NSViewController sublass might signal any views it contains that they need to be updated (assuming the views also supports this protocol).
 
+## UserDefault Magic
+
+Static function for reading/writing/deleting various types to/from User Defaults.
+
 ## Demo App
 
 Sample code using this SpellBook can be found in the open-source Cocoa App [CocoaGrimoire](https://github.com/magesteve/CocoaGrimoire). Other SpellBooks by the author are also demonstrated there.
