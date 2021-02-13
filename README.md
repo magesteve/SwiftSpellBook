@@ -32,6 +32,12 @@ Extensions Function calls for String type.
 
 For example, isNotEmpty() is a computed variable that returns TRUE if string has contents.
 
+## Array Extensions Magic
+
+Extensions Function calls for Dictionary type.
+
+For example, remove(item:) remove specific item from Array, regardless of location.
+
 ## Codable Extension Magic
 
 New Extensions to Codable Protocols.
