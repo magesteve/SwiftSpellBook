@@ -45,10 +45,35 @@ final class SwiftSpellBookTests: XCTestCase {
         XCTAssertEqual(newSpot.y, 3, "Testing reading Codable from JSON correct 3")
     }
         
+    func testRemoveArray() {
+        let n1 = TestNum(1)
+        let n2 = TestNum(2)
+        let n3 = TestNum(3)
+        let n4 = TestNum(4)
+        let dif4 = TestNum(4)
+
+        var nn = [n1, n2, n3, n4]
+        
+        XCTAssertEqual(TestNum.totalDescription(nn), "1+2+3+4", "RemoveArray start correct")
+        
+        nn.removeFirst()
+        
+        XCTAssertEqual(TestNum.totalDescription(nn), "2+3+4", "RemoveArray remove first correct")
+
+        nn.remove(item: n3)
+        
+        XCTAssertEqual(TestNum.totalDescription(nn), "2+4", "RemoveArray middle correct")
+        
+        nn.remove(item: dif4)
+        
+        XCTAssertEqual(TestNum.totalDescription(nn), "2+4", "RemoveArray none content correct")
+    }
+    
     static var allTests = [
         ("testNotEmpty", testNotEmpty),
         ("testCamelSplit", testCamelSplit),
         ("testJSON", testJSON),
+        ("testRemoveArray", testRemoveArray),
     ]
     
     public class TestClass: Codable {
@@ -60,4 +85,27 @@ final class SwiftSpellBookTests: XCTestCase {
             self.y = y
         }
     }
+
+    public class TestNum {
+        public var n = 0
+        
+        public init(_ n: Int) {
+            self.n = n
+        }
+        
+        public static func totalDescription(_ nums: [TestNum]) -> String {
+            var result: String = ""
+            
+            for n in nums {
+                if result.count>0 {
+                    result = result + "+"
+                }
+                
+                result = result + String(n.n)
+            }
+            
+            return result
+        }
+    }
 }
+
