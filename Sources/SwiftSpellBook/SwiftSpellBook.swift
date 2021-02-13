@@ -29,6 +29,9 @@ public extension SwiftSpellBook {
     /// Closure that has no results, but it passed a Data.
     typealias DataClosure = (Data) -> Void
     
+    /// Closure that has no results, but it passed a Date.
+    typealias DateClosure = (Date) -> Void
+    
     /// Closure that has no results, but it passed a String.
     typealias StringClosure = (String) -> Void
     
@@ -45,6 +48,9 @@ public extension SwiftSpellBook {
     
     /// Closure that has no parameters, but it returns a Data.
     typealias DataResultClosure = () -> Data
+    
+    /// Closure that has no parameters, but it returns a Date.
+    typealias DateResultClosure = () -> Date
     
     /// Closure that has no parameters, but it returns a String.
     typealias StringResultClosure = () -> String
