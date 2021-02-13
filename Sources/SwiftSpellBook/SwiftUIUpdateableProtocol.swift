@@ -1,5 +1,5 @@
 //
-//  SwiftUIUpdateable.swift
+//  SwiftUIUpdateableProtocol.swift
 //  SwiftSpellBook
 //
 //
@@ -10,7 +10,7 @@
 import Foundation
 
 /// Protocol for any UI element that can be updated
-public protocol SwiftUIUpdateable {
+public protocol SwiftUIUpdateableProtocol {
     
     /// SIgnal that element need to be Updated.
     func updateUI()
