@@ -7,11 +7,11 @@
 
 import Foundation
 
-// MARK: String Extensions
+// MARK: - String Extensions
 
 public extension String {
     
-    // MARK: Computed Property
+    // MARK: - Computed Property
     
     /// Reverse of isEmpty.  Variable returns true if content contains something.
     var isNotEmpty: Bool { !isEmpty }
@@ -65,5 +65,23 @@ public extension String {
         return result
     }
     
+    // MARK: - Functions
+    
+    /// Make string with self and new line to existing text (with LF when needed)
+    /// - Parameter newline: String text to add
+    func make(newline: String) -> String {
+        let nextLine = self.isEmpty ? "" : "\n"
+        
+        return self + nextLine + newline
+    }
+    
+    /// Add new line to existing text (with LF when needed)
+    /// - Parameter newline: String text to add
+    mutating func add(newline: String) {
+        let nextLine = self.isEmpty ? "" : "\n"
+        
+        self = self + nextLine + newline
+    }
+
 }
 
