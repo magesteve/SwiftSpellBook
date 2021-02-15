@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: Extension Array
+// MARK: - Extension Array
 
 // Extension to Array whose elements are objects.
 public extension Array where Element: AnyObject {

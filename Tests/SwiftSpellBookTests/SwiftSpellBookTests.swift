@@ -69,6 +69,42 @@ final class SwiftSpellBookTests: XCTestCase {
         XCTAssertEqual(TestNum.totalDescription(nn), "2+4", "RemoveArray none content correct")
     }
     
+    func testAddLine() {
+        
+        var line = ""
+        var line2 = ""
+
+        line.add(newline: "")
+        line2 = line2.make(newline: "")
+        
+        XCTAssertEqual(line, "", "addLine test 1")
+        XCTAssertEqual(line2, "", "makeNewLine test 1")
+
+        line.add(newline: "AAA")
+        line2 = line2.make(newline: "AAA")
+
+        XCTAssertEqual(line, "AAA", "addLine test 2")
+        XCTAssertEqual(line2, "AAA", "makeNewLine test 2")
+
+        line.add(newline: "")
+        line2 = line2.make(newline: "")
+
+        XCTAssertEqual(line, "AAA", "addLine test 3")
+        XCTAssertEqual(line2, "AAA", "makeNewLine test 3")
+
+        line.add(newline: "BBB")
+        line2 = line2.make(newline: "BBB")
+
+        XCTAssertEqual(line, "AAA\nBBB", "addLine test 4")
+        XCTAssertEqual(line2, "AAA\nBBB", "makeNewLine test 4")
+
+        line.add(newline: "CCC")
+        line2 = line2.make(newline: "CCC")
+
+        XCTAssertEqual(line, "AAA\nBBB\nCCC", "addLine test 5")
+        XCTAssertEqual(line2, "AAA\nBBB\nCCC", "makeNewLine test 5")
+    }
+    
     static var allTests = [
         ("testNotEmpty", testNotEmpty),
         ("testCamelSplit", testCamelSplit),

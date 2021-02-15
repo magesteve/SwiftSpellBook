@@ -7,6 +7,19 @@
 
 import Foundation
 
+// MARK: - Protocol
+
+/// Protocol for any UI element that can be updated
+public protocol SwiftUIUpdateableProtocol {
+    
+    /// SIgnal that element need to be Updated.
+    func updateUI()
+    
+}
+
+
+// MARK: - Structure
+
 /// Abstract extension for name space of typealias & static functions.
 public struct SwiftSpellBook {
     

@@ -70,6 +70,8 @@ public extension String {
     /// Make string with self and new line to existing text (with LF when needed)
     /// - Parameter newline: String text to add
     func make(newline: String) -> String {
+        guard newline.isNotEmpty else { return self }
+        
         let nextLine = self.isEmpty ? "" : "\n"
         
         return self + nextLine + newline
@@ -78,6 +80,8 @@ public extension String {
     /// Add new line to existing text (with LF when needed)
     /// - Parameter newline: String text to add
     mutating func add(newline: String) {
+        guard newline.isNotEmpty else { return }
+
         let nextLine = self.isEmpty ? "" : "\n"
         
         self = self + nextLine + newline
