@@ -74,6 +74,11 @@ public extension SwiftSpellBook {
     /// Closure that has no parameters, but it returns a Bool.
     typealias BoolResultClosure = () -> Bool
 
+    /// Closure type that is passed nothing, and returns an Array.
+    typealias ArrayResultClosure = () -> [Any]
+
+    /// Closure type that is passed an Int, and returns nothing.
+    typealias IntInformStringResultClosure = (Int) -> String
 }
 
 // MARK: UserDefaults
