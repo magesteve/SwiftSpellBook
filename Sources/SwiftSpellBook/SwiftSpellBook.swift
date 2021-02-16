@@ -56,7 +56,7 @@ public protocol SlamIntInputable {
 /// Types that support SlamSwitchable are visible objects that support having a closure to invoke when the bool value is changed.  It is comon to use this protocol on views like NSSwitch & NSCheckBox.
 public protocol SlamSwitchable {
 
-    // MARK: Required Properties
+    // MARK: - Required Properties
     
     // state of flag
     var slamSwitchState: Bool { get set }
@@ -83,16 +83,16 @@ public struct SwiftSpellBook {
     
 }
 
-// MARK: Closure Typealiases
+// MARK: - Closure Typealiases
 
 public extension SwiftSpellBook {
     
-    // MARK: Result Closures
+    // MARK: - Result Closures
     
     /// Closure that has no results and no parameters.
     typealias SimpleClosure = () -> Void
 
-    // MARK: Informative Closures
+    // MARK: - Informative Closures
     
     /// Closure that has no results, but it passed a URL.
     typealias URLClosure = (URL) -> Void
@@ -112,7 +112,7 @@ public extension SwiftSpellBook {
     /// Closure that has no results, but it passed a Bool.
     typealias BoolClosure = (Bool) -> Void
     
-    // MARK: Result Closures
+    // MARK: - Result Closures
     
     /// Closure that has no parameters, but it returns a URL.
     typealias URLResultClosure = () -> URL
@@ -139,7 +139,7 @@ public extension SwiftSpellBook {
     typealias IntInformStringResultClosure = (Int) -> String
 }
 
-// MARK: UserDefaults
+// MARK: - UserDefaults
 
 // Extension for User Defaults
 public extension SwiftSpellBook {
@@ -232,3 +232,62 @@ public extension SwiftSpellBook {
         }
     }
 }
+
+// MARK: - Extensions
+
+// Extension to SlamActionable
+public extension SlamActionable {
+    
+    // MARK: - Public Functions
+    
+    /// Invoke Closure Action
+    func slamPerformAction() {
+        if let block = slamActionClosure {
+            block()
+        }
+    }
+
+}
+
+// Extension to SlamTextInputable
+public extension SlamTextInputable {
+    
+    // MARK: - Public Functions
+
+   /// Invoke text changed
+    func slamTextChangedAction() {
+        if let block = slamTextChangedEvent {
+            block(slamTextState)
+        }
+    }
+
+}
+
+// Extension to SlamIntInputable
+public extension SlamIntInputable {
+    
+    // MARK: - Public Functions
+
+   /// Invoke Int changed
+    func slamIntChangedAction() {
+        if let block = slamIntChangedEvent {
+            block(slamIntState)
+        }
+    }
+
+}
+
+// Extension to SlamSwitchable
+public extension SlamSwitchable {
+    
+    // MARK: - Public Functions
+
+   /// Invoke switch changed
+    func slamSwitchChangedAction() {
+        if let block = slamSwitchChangedEvent {
+            block(slamSwitchState)
+        }
+    }
+
+}
+
