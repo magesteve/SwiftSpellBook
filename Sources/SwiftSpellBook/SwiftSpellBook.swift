@@ -41,6 +41,9 @@ public extension SwiftSpellBook {
     /// Closure that has no results, but it passed a String.
     typealias StringClosure = (String) -> Void
     
+    /// Closure that has no results, but it passed an Array Strings.
+    typealias StringArrayClosure = ([String]) -> Void
+    
     /// Closure that has no results, but it passed a Int.
     typealias IntClosure = (Int) -> Void
     
@@ -61,6 +64,9 @@ public extension SwiftSpellBook {
     /// Closure that has no parameters, but it returns a String.
     typealias StringResultClosure = () -> String
     
+    /// Closure that has no parameters, but it returns an Array Strings.
+    typealias StringArrayResultClosure = () -> [String]
+    
     /// Closure that has no parameters, but it returns a Int.
     typealias IntResultClosure = () -> Int
     
@@ -70,6 +76,8 @@ public extension SwiftSpellBook {
     /// Closure type that is passed nothing, and returns an Array.
     typealias ArrayResultClosure = () -> [Any]
 
+    // MARK: - Specialty Closures
+    
     /// Closure type that is passed an Int, and returns nothing.
     typealias IntInformStringResultClosure = (Int) -> String
 }
