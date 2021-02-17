@@ -50,4 +50,17 @@ public extension Encodable {
         return String(decoding: data, as: UTF8.self)
     }
     
+    /// Export dictionary based on encodable
+    /// - Returns: Dictionary containing content of self
+    func writeDictionary() throws -> SwiftSpellBook.StandardDictionary? {
+        let data = try JSONEncoder().encode(self)
+        
+        if let dictionary = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? SwiftSpellBook.StandardDictionary {
+            return dictionary
+        }
+        else {
+            return nil
+        }
+    }
+
 }
