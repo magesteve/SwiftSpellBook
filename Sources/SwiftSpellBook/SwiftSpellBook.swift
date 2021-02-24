@@ -80,6 +80,9 @@ public extension SwiftSpellBook {
     
     /// Closure type that is passed an Int, and returns nothing.
     typealias IntInformStringResultClosure = (Int) -> String
+
+    /// Closure type that is passed an Int, and returns Bool.
+    typealias IntInformBoolResultClosure = (Int) -> Bool
 }
 
 // MARK: - UserDefaults

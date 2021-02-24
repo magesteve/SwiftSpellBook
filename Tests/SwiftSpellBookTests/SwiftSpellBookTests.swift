@@ -27,24 +27,6 @@ final class SwiftSpellBookTests: XCTestCase {
         XCTAssertEqual("myXXX_test".splitCamelCase, "My X X X Test", "Testing splitCamelCase Underscore abbreviates")
     }
 
-    func testJSON() {
-        let spot = TestClass(2, 3)
-        guard let spotStr = spot.writeJSONString() else {
-            XCTFail("Testing writing Codable into JSON failed")
-            return
-        }
-        
-        XCTAssertEqual(spotStr, "{\"x\":2,\"y\":3}", "Testing converting Codable into JSON correct")
-        
-        guard let newSpot = spot.readJSONString(from: spotStr) as? TestClass else {
-            XCTFail("Testing reading Codable from JSON failed")
-            return
-        }
-
-        XCTAssertEqual(newSpot.x, 2, "Testing reading Codable from JSON correct x")
-        XCTAssertEqual(newSpot.y, 3, "Testing reading Codable from JSON correct 3")
-    }
-        
     func testRemoveArray() {
         let n1 = TestNum(1)
         let n2 = TestNum(2)
@@ -108,7 +90,6 @@ final class SwiftSpellBookTests: XCTestCase {
     static var allTests = [
         ("testNotEmpty", testNotEmpty),
         ("testCamelSplit", testCamelSplit),
-        ("testJSON", testJSON),
         ("testRemoveArray", testRemoveArray),
     ]
     
