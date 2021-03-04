@@ -86,6 +86,12 @@ public extension String {
         
         self = self + nextLine + newline
     }
-
+    
+    /// Using Regular Expression, calc if string contains the pattern.
+    /// - Parameter regex: String containing Regular Expression to check
+    /// - Returns: BOOL true if pattern matches.
+    func matches(_ regex: String) -> Bool {
+        return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+    }
 }
 
