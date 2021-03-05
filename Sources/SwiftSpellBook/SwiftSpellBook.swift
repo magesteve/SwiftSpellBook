@@ -32,6 +32,9 @@ public extension SwiftSpellBook {
     /// Closure that has no results, but it passed a URL.
     typealias URLClosure = (URL) -> Void
     
+    /// Closure that has no results, but it passed a Dictionary.
+    typealias DictionaryClosure = (StandardDictionary) -> Void
+    
     /// Closure that has no results, but it passed a Data.
     typealias DataClosure = (Data) -> Void
     
