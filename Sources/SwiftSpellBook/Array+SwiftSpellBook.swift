@@ -15,7 +15,7 @@ public extension Array where Element: AnyObject {
     
     /// If element is object, if array contains object (not equal valued object), then remove that instance from list.
     /// - Parameter item: AnyObject to remove
-    mutating func remove(item: AnyObject) {
+    mutating func spellRemove(item: AnyObject) {
         for (index, element) in self.enumerated()  {
             if element===item {
                 self.remove(at: index)

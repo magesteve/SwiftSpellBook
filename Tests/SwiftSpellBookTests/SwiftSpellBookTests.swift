@@ -10,21 +10,21 @@ final class SwiftSpellBookTests: XCTestCase {
     }
 
     func testCamelSplit() {
-        XCTAssertEqual("".splitCamelCase, "", "Testing splitCamelCase Empty")
-        XCTAssertEqual("test".splitCamelCase, "Test", "Testing splitCamelCase Simple lower")
-        XCTAssertEqual("Test".splitCamelCase, "Test", "Testing splitCamelCase Simple upper")
-        XCTAssertEqual("myTest".splitCamelCase, "My Test", "Testing splitCamelCase normal two word")
-        XCTAssertEqual("myTestExample".splitCamelCase, "My Test Example", "Testing splitCamelCase normal three word")
-        XCTAssertEqual("myTest1".splitCamelCase, "My Test 1", "Testing splitCamelCase normal numbers 1")
-        XCTAssertEqual("my1Test".splitCamelCase, "My 1 Test", "Testing splitCamelCase normal numbers 2")
-        XCTAssertEqual("my1Test".splitCamelCase, "My 1 Test", "Testing splitCamelCase normal numbers 3")
-        XCTAssertEqual("my1test".splitCamelCase, "My 1 Test", "Testing splitCamelCase normal numbers 4")
-        XCTAssertEqual("my22Test".splitCamelCase, "My 22 Test", "Testing splitCamelCase normal numbers 5")
-        XCTAssertEqual("My_Test".splitCamelCase, "My Test", "Testing splitCamelCase Underscore 1")
-        XCTAssertEqual("My_test".splitCamelCase, "My Test", "Testing splitCamelCase Underscore 2")
-        XCTAssertEqual("my_Test".splitCamelCase, "My Test", "Testing splitCamelCase Underscore 3")
-        XCTAssertEqual("my_test".splitCamelCase, "My Test", "Testing splitCamelCase Underscore 4")
-        XCTAssertEqual("myXXX_test".splitCamelCase, "My X X X Test", "Testing splitCamelCase Underscore abbreviates")
+        XCTAssertEqual("".spellSplitCamelCase, "", "Testing spellSplitCamelCase Empty")
+        XCTAssertEqual("test".spellSplitCamelCase, "Test", "Testing spellSplitCamelCase Simple lower")
+        XCTAssertEqual("Test".spellSplitCamelCase, "Test", "Testing spellSplitCamelCase Simple upper")
+        XCTAssertEqual("myTest".spellSplitCamelCase, "My Test", "Testing spellSplitCamelCase normal two word")
+        XCTAssertEqual("myTestExample".spellSplitCamelCase, "My Test Example", "Testing spellSplitCamelCase normal three word")
+        XCTAssertEqual("myTest1".spellSplitCamelCase, "My Test 1", "Testing spellSplitCamelCase normal numbers 1")
+        XCTAssertEqual("my1Test".spellSplitCamelCase, "My 1 Test", "Testing spellSplitCamelCase normal numbers 2")
+        XCTAssertEqual("my1Test".spellSplitCamelCase, "My 1 Test", "Testing spellSplitCamelCase normal numbers 3")
+        XCTAssertEqual("my1test".spellSplitCamelCase, "My 1 Test", "Testing spellSplitCamelCase normal numbers 4")
+        XCTAssertEqual("my22Test".spellSplitCamelCase, "My 22 Test", "Testing spellSplitCamelCase normal numbers 5")
+        XCTAssertEqual("My_Test".spellSplitCamelCase, "My Test", "Testing spellSplitCamelCase Underscore 1")
+        XCTAssertEqual("My_test".spellSplitCamelCase, "My Test", "Testing spellSplitCamelCase Underscore 2")
+        XCTAssertEqual("my_Test".spellSplitCamelCase, "My Test", "Testing spellSplitCamelCase Underscore 3")
+        XCTAssertEqual("my_test".spellSplitCamelCase, "My Test", "Testing spellSplitCamelCase Underscore 4")
+        XCTAssertEqual("myXXX_test".spellSplitCamelCase, "My X X X Test", "Testing spellSplitCamelCase Underscore abbreviates")
     }
 
     func testRemoveArray() {
@@ -42,11 +42,11 @@ final class SwiftSpellBookTests: XCTestCase {
         
         XCTAssertEqual(TestNum.totalDescription(nn), "2+3+4", "RemoveArray remove first correct")
 
-        nn.remove(item: n3)
+        nn.spellRemove(item: n3)
         
         XCTAssertEqual(TestNum.totalDescription(nn), "2+4", "RemoveArray middle correct")
         
-        nn.remove(item: dif4)
+        nn.spellRemove(item: dif4)
         
         XCTAssertEqual(TestNum.totalDescription(nn), "2+4", "RemoveArray none content correct")
     }
@@ -56,41 +56,59 @@ final class SwiftSpellBookTests: XCTestCase {
         var line = ""
         var line2 = ""
 
-        line.add(newline: "")
-        line2 = line2.make(newline: "")
+        line.spellAdd(newline: "")
+        line2 = line2.spellMake(newline: "")
         
         XCTAssertEqual(line, "", "addLine test 1")
         XCTAssertEqual(line2, "", "makeNewLine test 1")
 
-        line.add(newline: "AAA")
-        line2 = line2.make(newline: "AAA")
+        line.spellAdd(newline: "AAA")
+        line2 = line2.spellMake(newline: "AAA")
 
         XCTAssertEqual(line, "AAA", "addLine test 2")
         XCTAssertEqual(line2, "AAA", "makeNewLine test 2")
 
-        line.add(newline: "")
-        line2 = line2.make(newline: "")
+        line.spellAdd(newline: "")
+        line2 = line2.spellMake(newline: "")
 
         XCTAssertEqual(line, "AAA", "addLine test 3")
         XCTAssertEqual(line2, "AAA", "makeNewLine test 3")
 
-        line.add(newline: "BBB")
-        line2 = line2.make(newline: "BBB")
+        line.spellAdd(newline: "BBB")
+        line2 = line2.spellMake(newline: "BBB")
 
         XCTAssertEqual(line, "AAA\nBBB", "addLine test 4")
         XCTAssertEqual(line2, "AAA\nBBB", "makeNewLine test 4")
 
-        line.add(newline: "CCC")
-        line2 = line2.make(newline: "CCC")
+        line.spellAdd(newline: "CCC")
+        line2 = line2.spellMake(newline: "CCC")
 
         XCTAssertEqual(line, "AAA\nBBB\nCCC", "addLine test 5")
         XCTAssertEqual(line2, "AAA\nBBB\nCCC", "makeNewLine test 5")
     }
     
+    func testDataToHex() {
+        let bytes1:[UInt8] = [0xff, 0xD9]
+        let data1 = Data(bytes1)
+        let result1 = data1.spellHexEncodedString()
+        XCTAssertEqual(result1, "ffd9", "Data To Hex Test 1")
+
+        let bytes2:[UInt8] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+        let data2 = Data(bytes2)
+        let result2 = data2.spellHexEncodedString()
+        XCTAssertEqual(result2, "000102030405060708090a0b0c0d0e0f10", "Data To Hex Test 2")
+
+        let bytes3:[UInt8] = [0x11, 0x77, 0x88, 0xff]
+        let data3 = Data(bytes3)
+        let result3 = data3.spellHexEncodedString()
+        XCTAssertEqual(result3, "117788ff", "Data To Hex Test 3")
+    }
+        
     static var allTests = [
         ("testNotEmpty", testNotEmpty),
         ("testCamelSplit", testCamelSplit),
         ("testRemoveArray", testRemoveArray),
+        ("testDataToHex", testDataToHex),
     ]
     
     public class TestClass: Codable {

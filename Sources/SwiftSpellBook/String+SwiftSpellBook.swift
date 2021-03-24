@@ -17,7 +17,7 @@ public extension String {
     var isNotEmpty: Bool { !isEmpty }
     
     /// Splitting camel case string into human readable
-    var splitCamelCase: String {
+    var spellSplitCamelCase: String {
         guard self.isNotEmpty else { return "" }
         
         var result = ""
@@ -69,7 +69,7 @@ public extension String {
     
     /// Make string with self and new line to existing text (with LF when needed)
     /// - Parameter newline: String text to add
-    func make(newline: String) -> String {
+    func spellMake(newline: String) -> String {
         guard newline.isNotEmpty else { return self }
         
         let nextLine = self.isEmpty ? "" : "\n"
@@ -79,7 +79,7 @@ public extension String {
     
     /// Add new line to existing text (with LF when needed)
     /// - Parameter newline: String text to add
-    mutating func add(newline: String) {
+    mutating func spellAdd(newline: String) {
         guard newline.isNotEmpty else { return }
 
         let nextLine = self.isEmpty ? "" : "\n"
@@ -90,7 +90,7 @@ public extension String {
     /// Using Regular Expression, calc if string contains the pattern.
     /// - Parameter regex: String containing Regular Expression to check
     /// - Returns: BOOL true if pattern matches.
-    func matches(_ regex: String) -> Bool {
+    func spellMatches(_ regex: String) -> Bool {
         return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
     }
 }
