@@ -42,7 +42,7 @@ For example, remove(item:) remove specific item from Array, regardless of locati
 
 New Extensions to Codable Protocols.
 
-For example, writeJSONData for converting Codable element into JSON data.
+For example, spellWriteJSONData for converting Codable element into JSON data.
 
 ## SwiftUIUpdateableProtocol Magic
 
